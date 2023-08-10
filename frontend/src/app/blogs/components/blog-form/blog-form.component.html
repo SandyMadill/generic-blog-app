@@ -1,0 +1,25 @@
+<div class="component-container">
+    <br>
+    <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="mat-form-container">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title">
+        </mat-form-field><br>
+        <editor apiKey="test" [init]="{plugins: 'link'}" formControlName="blogText"></editor>
+        <label class="image-upload-container btn btn-bwm">
+            <span>Upload Thumbnail</span><br>
+            <div *ngIf="imageStatus!=null"><label>{{imageStatus}}</label><br></div>
+            <input #imageInput
+                type="file"
+                accept="image/*"
+                (change)="processFile(imageInput)">
+        </label>
+        <br>
+        <label>(Must be a png or jpeg and have a height and width less than 1000 pixels)</label>
+        <br>
+
+        <button type="submit">submit</button>
+    </form>
+    <br>
+    
+</div>

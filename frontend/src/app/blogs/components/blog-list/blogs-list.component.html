@@ -1,0 +1,17 @@
+
+<form [formGroup]="searchForm" class="form-container" (ngSubmit)="onSubmit()">
+    <mat-form-field class="mat-form-container">
+        <mat-label>Search</mat-label>
+        <input matInput formControlName="search">
+        <button mat-button matSuffix mat-icon-button type="submit">
+            search
+        </button>
+    </mat-form-field>
+</form>
+<div *ngFor="let blog of blogs$ | async">
+    <div><app-blogs-list-item [blogId]='blog.id'></app-blogs-list-item></div>
+</div>
+
+<div appIntersection (scrollEnd)="scrollEnd()">  </div>
+<button *ngIf="fetching==false && pages>page" (click)="scrollEnd()">Load More</button>
+<mat-spinner *ngIf="fetching==true"></mat-spinner>

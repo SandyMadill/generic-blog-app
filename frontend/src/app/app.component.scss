@@ -1,0 +1,23 @@
+.main-container {
+  display:flex;
+  width: 100vw;
+  margin:0;
+}
+
+.content{
+  min-height: 100vh;
+  overflow-wrap: break-word;
+  box-sizing: content-box;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.side-bar-container{
+  width: 33vw;
+}
+
+body { margin:0px; }
+
+header { border:1px black solid; }

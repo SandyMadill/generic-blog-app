@@ -1,0 +1,15 @@
+<div class="component-container">
+    <table>
+        <tr class="user-row" *ngFor="let user of users$ | async">
+            <td class="user-pfp-column" (click)="selectUser(user.id)"><img [src]='pfps.get(user.id)'></td>
+            <td class="user-name-column" (click)="selectUser(user.id)">{{user.username}}</td>
+            <td class="user-sub-column">
+                <button *ngIf="subscriptionsEntities[user.id]==null" (click)="subscribe(user.id)">Subscribe</button>
+                <button *ngIf="subscriptionsEntities[user.id]!=null" (click)="unsubscribe(user.id)">Unsubscribe</button>
+            </td>
+        </tr>
+    </table>
+    <div appIntersection (scrollEnd)="scrollEnd()">  </div>
+    <button *ngIf="fetching==false && pages>page" (click)="scrollEnd()">Load More</button>
+    <mat-spinner *ngIf="fetching==true"></mat-spinner>
+</div>

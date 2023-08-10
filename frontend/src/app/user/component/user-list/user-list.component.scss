@@ -1,0 +1,22 @@
+.user-row:hover{
+    background-color: rgba(255, 255, 255, 0.082);
+    cursor:pointer;
+}
+
+.user-name-column{
+    border-top:1px solid rgba(255, 255, 255, 0.12) ;
+    padding: 2%;
+    width: 80vh;
+}
+
+.user-pfp-column{
+    border-top:1px solid rgba(255, 255, 255, 0.12) ;
+    padding: 2%;
+    width: 20vh;
+}
+
+.user-sub-column{
+    border-top:1px solid rgba(255, 255, 255, 0.12) ;
+    padding: 2%;
+    width: 20vh;
+}

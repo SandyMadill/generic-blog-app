@@ -1,0 +1,18 @@
+<div class="component-container">
+    <img class="pfp" [src]='profilePicture'/>
+    <div *ngIf="user!=null">
+        <b><h1>{{user.displayName}}</h1></b>
+        <h1>@{{user.username}}</h1>
+    </div>
+    <br>
+    <h1>Blog Posts</h1>
+    <div *ngFor="let month of monthBlogs | keyvalue">
+        <a class="link" *ngIf="month.value.reveal==false" (click)="revealMonth(month.key)">{{month.key}} (show)</a>
+        <a class="link" *ngIf="month.value.reveal==true" (click)="hideMonth(month.key)">{{month.key}} (hide)</a>
+        <div *ngIf="month.value.reveal==true">
+            <div class="blogEntries" *ngFor="let blog of month.value.blogs">
+                <a class="link" (click)="selectBlog(blog.id)">{{blog.title}}</a>
+            </div>
+        </div>
+    </div>
+</div>

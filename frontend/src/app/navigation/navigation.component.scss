@@ -1,0 +1,32 @@
+.sidenav-container {
+  height: 100%;
+  width: 33vw;
+  text-align: right;
+}
+
+.sidenav {
+  width: inherit;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.non-list-item{
+  display:flex;
+  flex-direction: row-reverse;
+  text-align: right;
+  padding-left:16px;
+  padding-right:16px;
+}
+
+.pfp{
+  cursor:pointer;
+  padding: 4px;
+}
